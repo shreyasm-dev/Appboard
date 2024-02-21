@@ -12,7 +12,7 @@ Appboard allows you to put apps on the Desktop or Notification Center via a widg
 
 I personally prefer to have desktop icons hidden (with `defaults write com.apple.finder CreateDesktop false`), but I'd still like to have easy access to some apps without adding more things to my already-overflowing dock.
 
-# How it Works
+## How it Works
 
 First, the widget receives a list of paths from a configuration intent. Then, it gets icons for those apps using NSWorkspace.shared.icon(forFile:), falling back to a red square if it can't find it. It lays the icons out in a simple grid with links to the Appboard URL scheme.
 
