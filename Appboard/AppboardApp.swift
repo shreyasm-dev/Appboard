@@ -23,6 +23,11 @@ struct AppboardApp: App {
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
+  func applicationWillFinishLaunching(_ notification: Notification) {
+    // Note: App Sandbox is disabled
+    AppMover.moveIfNecessary()
+  }
+  
   func applicationDidFinishLaunching(_ notification: Notification) {
     if terminate {
       NSApp.terminate(nil)

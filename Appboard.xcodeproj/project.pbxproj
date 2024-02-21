@@ -20,6 +20,8 @@
 		93710D382B85BC4A0023E8C0 /* AppboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 93710D372B85BC4A0023E8C0 /* AppboardKit */; };
 		93710D3B2B85BCBA0023E8C0 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93710D3A2B85BCBA0023E8C0 /* Entry.swift */; };
 		93710D3F2B862B950023E8C0 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93710D3E2B862B950023E8C0 /* Dashboard.swift */; };
+		937D1DDE2B865625004AC454 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937D1DDD2B865625004AC454 /* Extensions.swift */; };
+		937D1DE02B86562D004AC454 /* AppMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937D1DDF2B86562D004AC454 /* AppMover.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		93710D2F2B85BC130023E8C0 /* Widgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widgets.entitlements; sourceTree = "<group>"; };
 		93710D3A2B85BCBA0023E8C0 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		93710D3E2B862B950023E8C0 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		937D1DDD2B865625004AC454 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		937D1DDF2B86562D004AC454 /* AppMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMover.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 		936B31482B855F97004C6227 /* Appboard */ = {
 			isa = PBXGroup;
 			children = (
+				937D1DDC2B86561D004AC454 /* AppMover */,
 				936B31782B856B20004C6227 /* Info.plist */,
 				936B31492B855F97004C6227 /* AppboardApp.swift */,
 				934480F22B864B8300581DE0 /* ContentView.swift */,
@@ -159,6 +164,15 @@
 				93710D2F2B85BC130023E8C0 /* Widgets.entitlements */,
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		937D1DDC2B86561D004AC454 /* AppMover */ = {
+			isa = PBXGroup;
+			children = (
+				937D1DDD2B865625004AC454 /* Extensions.swift */,
+				937D1DDF2B86562D004AC454 /* AppMover.swift */,
+			);
+			path = AppMover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +287,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				936B314A2B855F97004C6227 /* AppboardApp.swift in Sources */,
+				937D1DDE2B865625004AC454 /* Extensions.swift in Sources */,
 				934480F32B864B8300581DE0 /* ContentView.swift in Sources */,
+				937D1DE02B86562D004AC454 /* AppMover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
