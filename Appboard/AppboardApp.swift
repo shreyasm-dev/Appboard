@@ -7,42 +7,34 @@
 
 import SwiftUI
 
+var terminate = false
+
 @main
 struct AppboardApp: App {
   @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   
   var body: some Scene {
     WindowGroup {
-      EmptyView()
-        .onOpenURL {
-          guard $0.scheme == "appboard" else {
-            NSApp.terminate(nil)
-            exit(1)
-          }
-          
-          guard let components = URLComponents(url: $0, resolvingAgainstBaseURL: true) else {
-            NSApp.terminate(nil)
-            exit(1)
-          }
-          
-          guard let action = components.host, action == "open" else {
-            NSApp.terminate(nil)
-            exit(1)
-          }
-          
-          guard let path = components.queryItems?.first(where: { $0.name == "path" })?.value else {
-            NSApp.terminate(nil)
-            exit(1)
-          }
-          
-          NSWorkspace.shared.open(URL(filePath: path))
-        }
+      ContentView()
     }
+    .windowStyle(.hiddenTitleBar)
+    .windowResizability(.contentSize)
   }
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationDidFinishLaunching(_ notification: Notification) {
-    NSApp.terminate(nil)
+    if terminate {
+      NSApp.terminate(nil)
+    }
+  }
+  
+  // TODO: Something better
+  func applicationDidUpdate(_ notification: Notification) {
+    if let window = NSApp.mainWindow {
+      if !window.isMovableByWindowBackground {
+        window.isMovableByWindowBackground = true
+      }
+    }
   }
 }

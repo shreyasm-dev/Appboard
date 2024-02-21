@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		934480F32B864B8300581DE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934480F22B864B8300581DE0 /* ContentView.swift */; };
 		936B314A2B855F97004C6227 /* AppboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B31492B855F97004C6227 /* AppboardApp.swift */; };
 		936B314E2B855F98004C6227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936B314D2B855F98004C6227 /* Assets.xcassets */; };
 		936B31512B855F98004C6227 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936B31502B855F98004C6227 /* Preview Assets.xcassets */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		9337BBDD2B859EE40051B7FE /* AppboardKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppboardKit; sourceTree = "<group>"; };
+		934480F22B864B8300581DE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		936B31462B855F97004C6227 /* Appboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936B31492B855F97004C6227 /* AppboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppboardApp.swift; sourceTree = "<group>"; };
 		936B314D2B855F98004C6227 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				936B31782B856B20004C6227 /* Info.plist */,
 				936B31492B855F97004C6227 /* AppboardApp.swift */,
+				934480F22B864B8300581DE0 /* ContentView.swift */,
 				936B314D2B855F98004C6227 /* Assets.xcassets */,
 				936B31522B855F98004C6227 /* Appboard.entitlements */,
 				936B314F2B855F98004C6227 /* Preview Content */,
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				936B314A2B855F97004C6227 /* AppboardApp.swift in Sources */,
+				934480F32B864B8300581DE0 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
