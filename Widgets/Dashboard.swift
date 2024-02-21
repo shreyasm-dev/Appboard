@@ -14,7 +14,10 @@ struct DashboardConfiguration: WidgetConfigurationIntent {
   static var title: LocalizedStringResource = "Configuration"
   static var description = IntentDescription("Square Appboard widget")
   
-  @Parameter(title: "Paths to Apps", default: [
+  @Parameter(title: "Show names", description: "Show names under icons. Names will never be shown on small widgets.", default: true)
+  var showName: Bool
+  
+  @Parameter(title: "Paths to apps or files", default: [
     "/System/Applications/Messages.app",
     "/System/Applications/Facetime.app",
     "/System/Applications/Photos.app",
@@ -25,8 +28,8 @@ struct DashboardConfiguration: WidgetConfigurationIntent {
 
 struct DashboardEntryView : View {
   var entry: Provider<DashboardConfiguration>.Entry
-  let rows: Int
-  let columns: Int
+  var rows: Int
+  var columns: Int
   let grid: [[String?]]
   
   init(entry: Provider<DashboardConfiguration>.Entry) {
@@ -42,6 +45,9 @@ struct DashboardEntryView : View {
     default:
       fatalError("Unreachable")
     }
+    
+    self.rows = max(self.rows, 1)
+    self.columns = max(self.columns, 1)
     
     var grid = Array(repeating: Array(repeating: nil as String?, count: self.columns), count: self.rows)
     
@@ -62,7 +68,18 @@ struct DashboardEntryView : View {
           ForEach(row, id: \.self) { path in
             if let path = path {
               Link(destination: Appboard.appboardURL(path)) {
-                Appboard.getIconImage(path)
+                VStack {
+                  Appboard.getIconImage(path)
+                  
+                  if self.entry.configuration.showName {
+                    if self.entry.context.family != .systemSmall {
+                      Text(NSString(string: URL(string: path)!.lastPathComponent).deletingPathExtension)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                        .font(.caption)
+                    }
+                  }
+                }
               }
             } else {
               Appboard.getImage(Appboard.defaultImage)
