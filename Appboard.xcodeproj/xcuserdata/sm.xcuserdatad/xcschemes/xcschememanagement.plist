@@ -7,7 +7,7 @@
 		<key>Appboard.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<key>AppboardHelper.xcscheme_^#shared#^_</key>
 		<dict>
@@ -22,7 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>936B31452B855F97004C6227</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>936B315D2B856194004C6227</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93710D212B85BC110023E8C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
