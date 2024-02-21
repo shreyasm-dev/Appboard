@@ -18,7 +18,7 @@
 		93710D322B85BC130023E8C0 /* WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 93710D222B85BC110023E8C0 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		93710D382B85BC4A0023E8C0 /* AppboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 93710D372B85BC4A0023E8C0 /* AppboardKit */; };
 		93710D3B2B85BCBA0023E8C0 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93710D3A2B85BCBA0023E8C0 /* Entry.swift */; };
-		93710D3F2B862B950023E8C0 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93710D3E2B862B950023E8C0 /* Square.swift */; };
+		93710D3F2B862B950023E8C0 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93710D3E2B862B950023E8C0 /* Dashboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,7 @@
 		93710D2E2B85BC130023E8C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93710D2F2B85BC130023E8C0 /* Widgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widgets.entitlements; sourceTree = "<group>"; };
 		93710D3A2B85BCBA0023E8C0 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		93710D3E2B862B950023E8C0 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		93710D3E2B862B950023E8C0 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				93710D262B85BC120023E8C0 /* WidgetsBundle.swift */,
-				93710D3E2B862B950023E8C0 /* Square.swift */,
+				93710D3E2B862B950023E8C0 /* Dashboard.swift */,
 				93710D3A2B85BCBA0023E8C0 /* Entry.swift */,
 				93710D2C2B85BC130023E8C0 /* Assets.xcassets */,
 				93710D2E2B85BC130023E8C0 /* Info.plist */,
@@ -277,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93710D3F2B862B950023E8C0 /* Square.swift in Sources */,
+				93710D3F2B862B950023E8C0 /* Dashboard.swift in Sources */,
 				93710D3B2B85BCBA0023E8C0 /* Entry.swift in Sources */,
 				93710D272B85BC120023E8C0 /* WidgetsBundle.swift in Sources */,
 			);

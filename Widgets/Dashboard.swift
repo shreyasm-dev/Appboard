@@ -10,7 +10,7 @@ import SwiftUI
 import AppIntents
 import AppboardKit
 
-struct SquareConfiguration: WidgetConfigurationIntent {
+struct DashboardConfiguration: WidgetConfigurationIntent {
   static var title: LocalizedStringResource = "Configuration"
   static var description = IntentDescription("Square Appboard widget")
   
@@ -23,13 +23,13 @@ struct SquareConfiguration: WidgetConfigurationIntent {
   var paths: [String]
 }
 
-struct SquareEntryView : View {
-  var entry: Provider<SquareConfiguration>.Entry
+struct DashboardEntryView : View {
+  var entry: Provider<DashboardConfiguration>.Entry
   let rows: Int
   let columns: Int
   let grid: [[String?]]
   
-  init(entry: Provider<SquareConfiguration>.Entry) {
+  init(entry: Provider<DashboardConfiguration>.Entry) {
     self.entry = entry
     
     switch entry.context.family {
@@ -75,12 +75,12 @@ struct SquareEntryView : View {
   }
 }
 
-struct Square: Widget {
+struct Dashboard: Widget {
   let kind: String = "Quadruple"
   
   var body: some WidgetConfiguration {
-    AppIntentConfiguration(kind: kind, intent: SquareConfiguration.self, provider: Provider()) { entry in
-      SquareEntryView(entry: entry)
+    AppIntentConfiguration(kind: kind, intent: DashboardConfiguration.self, provider: Provider()) { entry in
+      DashboardEntryView(entry: entry)
         .containerBackground(.fill.tertiary, for: .widget)
     }
     .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge])
