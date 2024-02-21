@@ -19,3 +19,9 @@ First, the widget receives a list of paths from a configuration intent. Then, it
 The main Appboard app has a URL scheme that accepts URLs of the form `appboard://open?path=<path>`. This is required because widgets cannot open URLs other than those for which their parent applications are editors.
 
 When the Appboard app is opened, it checks for an Appboard link. If there is one, it opens the path and immediately terminates. If not, it opens a help screen.
+
+## Images
+
+![The default simple configuration](./media/simple.png)
+
+![A configuration with files, folders, and names](./media/names.png)
