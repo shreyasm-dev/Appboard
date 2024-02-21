@@ -26,17 +26,28 @@ struct SquareConfiguration: WidgetConfigurationIntent {
 struct SquareEntryView : View {
   var entry: Provider<SquareConfiguration>.Entry
   let rows: Int
+  let columns: Int
   let grid: [[String?]]
   
   init(entry: Provider<SquareConfiguration>.Entry) {
     self.entry = entry
-    self.rows = Int(Float(entry.configuration.paths.count).squareRoot().rounded(.up))
     
-    var grid = Array(repeating: Array(repeating: nil as String?, count: rows), count: rows)
+    switch entry.context.family {
+    case .systemSmall, .systemLarge:
+      self.rows = Int(Float(entry.configuration.paths.count).squareRoot().rounded(.up))
+      self.columns = self.rows
+    case .systemMedium, .systemExtraLarge:
+      self.rows = Int(Float(entry.configuration.paths.count).squareRoot().rounded(.up)) / 2
+      self.columns = self.rows * 4
+    default:
+      fatalError("Unreachable")
+    }
     
-    for i in 0..<rows {
-      for j in 0..<rows {
-        grid[i][j] = (i * rows) + j < entry.configuration.paths.count ? entry.configuration.paths[(i * rows) + j] : nil
+    var grid = Array(repeating: Array(repeating: nil as String?, count: self.columns), count: self.rows)
+    
+    for i in 0..<self.rows {
+      for j in 0..<self.columns {
+        grid[i][j] = (i * self.columns) + j < entry.configuration.paths.count ? entry.configuration.paths[(i * self.columns) + j] : nil
       }
     }
     
@@ -45,17 +56,17 @@ struct SquareEntryView : View {
   
   var body: some View {
     VStack {
-      Grid {
-        ForEach(self.grid, id: \.self) { row in
-          GridRow {
-            ForEach(row, id: \.self) { path in
-              if let path = path {
-                Link(destination: Appboard.appboardURL(path), label: {
-                  Appboard.getIconImage(path)
-                })
-              } else {
-                EmptyView()
+      // For some reason, Grid doesn't work for lots of items
+      ForEach(self.grid, id: \.self) { row in
+        HStack {
+          ForEach(row, id: \.self) { path in
+            if let path = path {
+              Link(destination: Appboard.appboardURL(path)) {
+                Appboard.getIconImage(path)
               }
+            } else {
+              Appboard.getImage(Appboard.defaultImage)
+                .opacity(0)
             }
           }
         }
@@ -72,6 +83,6 @@ struct Square: Widget {
       SquareEntryView(entry: entry)
         .containerBackground(.fill.tertiary, for: .widget)
     }
-    .supportedFamilies([.systemSmall, .systemLarge])
+    .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge])
   }
 }

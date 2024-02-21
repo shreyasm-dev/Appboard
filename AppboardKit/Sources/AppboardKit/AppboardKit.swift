@@ -14,10 +14,14 @@ public struct Appboard {
     return icon
   }
   
-  public static func getIconImage(_ path: String) -> some View {
-    Image(nsImage: self.getIcon(path))
+  public static func getImage(_ nsImage: NSImage) -> some View {
+    Image(nsImage: nsImage)
       .resizable()
       .aspectRatio(contentMode: .fit)
+  }
+  
+  public static func getIconImage(_ path: String) -> some View {
+    self.getImage(self.getIcon(path))
   }
   
   public static func appboardURL(_ path: String) -> URL {
